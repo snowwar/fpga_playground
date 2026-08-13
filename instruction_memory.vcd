@@ -1,0 +1,43 @@
+$date
+	Thu Aug 13 14:16:59 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench_ch2_instruction_memory $end
+$var wire 32 ! instr [31:0] $end
+$var reg 32 " addr [31:0] $end
+$scope module uut $end
+$var wire 32 # addr [31:0] $end
+$var wire 32 $ instr [31:0] $end
+$var wire 32 % word_addr [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %
+bx $
+bx #
+bx "
+bx !
+$end
+#5000
+b11110000111100001010010110100101 !
+b11110000111100001010010110100101 $
+b0 %
+b0 "
+b0 #
+#15000
+b11111111000000001111111100000000 !
+b11111111000000001111111100000000 $
+b10 %
+b1000 "
+b1000 #
+#20000

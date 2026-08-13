@@ -15,4 +15,10 @@ end
 
 assign pc_next = pc_current + 4;
 
+wire [31:0] instr;
+InstructionMemory im(
+    .addr(pc_current),
+    .instr(instr)
+);
+
 endmodule
