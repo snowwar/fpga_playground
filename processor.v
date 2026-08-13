@@ -21,4 +21,8 @@ InstructionMemory im(
     .instr(instr)
 );
 
+ControlUnit cu(
+    .instr(instr)
+);
+
 endmodule
