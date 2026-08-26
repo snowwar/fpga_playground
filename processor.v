@@ -21,8 +21,13 @@ module Processor (
         .instr(instr)
     );
 
+    wire [3:0] alu_op;
+    wire reg_write_en;
+
     ControlUnit cu(
-        .instr(instr)
+        .instr(instr),
+        .alu_op(alu_op),
+        .reg_write_en(reg_write_en)
     );
 
     wire [4:0] rd;
@@ -48,5 +53,17 @@ module Processor (
         .rs1_value(rs1_value),
         .rs2_value(rs2_value)
     );
+
+    // ALU
+    wire [31:0] alu_out;
+
+    ALU alu(
+        .a(rs1_value),
+        .b(rs2_value),
+        .alu_op(alu_op),
+        .result(alu_out)
+    );
+
+    assign rd_value = alu_out;
 
 endmodule
